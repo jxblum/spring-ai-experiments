@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>io.vmware.spring</groupId>
+		<artifactId>spring-ai-experiments</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>azure-openai-experiments</artifactId>
+
+	<properties>
+		<microsoft-azure-ai-openai.version>1.0.0-beta.5</microsoft-azure-ai-openai.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.azure</groupId>
+			<artifactId>azure-ai-openai</artifactId>
+			<version>${microsoft-azure-ai-openai.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>

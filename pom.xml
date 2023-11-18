@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.5</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>io.vmware.spring</groupId>
+	<artifactId>spring-ai-experiments</artifactId>
+	<packaging>pom</packaging>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<modules>
+		<module>azure-openai-experiments</module>
+	</modules>
+
+	<name>spring-ai-experiments</name>
+	<description>
+		Experiments using Spring AI with AI providers, such as OpenAI and Microsoft Azure OpenAI Service.
+	</description>
+
+	<properties>
+		<java.version>17</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cp-elements.version>2.0.0-M3</cp-elements.version>
+		<spring-ai.version>0.7.1-SNAPSHOT</spring-ai.version>
+		<testcontainers.version>1.19.1</testcontainers.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>spring-snapshot-repo</id>
+			<name>Spring Snapshot</name>
+			<url>https://repo.spring.io/snapshot</url>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.experimental.ai</groupId>
+				<artifactId>spring-ai-openai-spring-boot-starter</artifactId>
+				<version>${spring-ai.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.experimental.ai</groupId>
+				<artifactId>spring-ai-azure-openai-spring-boot-starter</artifactId>
+				<version>${spring-ai.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codeprimate</groupId>
+			<artifactId>elements</artifactId>
+			<version>${cp-elements.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.yaml</groupId>
+					<artifactId>snakeyaml</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.yaml</groupId>
+					<artifactId>snakeyaml</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>testcontainers</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
